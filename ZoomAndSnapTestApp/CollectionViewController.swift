@@ -12,8 +12,7 @@ import ZoomSnapLayout
 class CollectionViewController: UIViewController {
     
     weak var collectionView: UICollectionView!
-    let collectionDataSource = CollectionDataSource()
-    
+    var collectionDataSource: CollectionDataSource?
     
     override func loadView() {
         super.loadView()
@@ -33,18 +32,24 @@ class CollectionViewController: UIViewController {
             collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             ])
-
+        
         self.collectionView = collectionView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         guard let collectionView = collectionView else { fatalError() }
+        collectionDataSource = CollectionDataSource(collectionView: collectionView)
         //collectionView.decelerationRate = .fast // uncomment if necessary
         collectionView.dataSource = collectionDataSource
         collectionView.backgroundColor = .white
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(CollectionLoaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footerCell")
+//        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            flowLayout.footerReferenceSize = CGSize(width: 200, height: 75)
+//        }
+        
     }
-
+    
 }

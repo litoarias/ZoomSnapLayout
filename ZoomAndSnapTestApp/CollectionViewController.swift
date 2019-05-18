@@ -45,11 +45,6 @@ class CollectionViewController: UIViewController {
         collectionView.dataSource = collectionDataSource
         collectionView.backgroundColor = .white
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-        collectionView.register(CollectionLoaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footerCell")
-//        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            flowLayout.footerReferenceSize = CGSize(width: 200, height: 75)
-//        }
-        
     }
     
 }

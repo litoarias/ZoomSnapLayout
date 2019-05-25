@@ -22,7 +22,8 @@ class CollectionViewController: UIViewController {
         let guide = view.safeAreaLayoutGuide
         let topAnchor = guide.topAnchor
         let height = UIScreen.main.bounds.size.height
-        let flowLayout = ZoomAndSnapFlowLayout(itemSize: CGSize(width: (height / 7) / 2, height: height / 7))
+        let wiidth = UIScreen.main.bounds.size.width
+        let flowLayout = ZoomAndSnapFlowLayout(itemSize: CGSize(width: wiidth / 1.5, height: height / 8))
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(collectionView)

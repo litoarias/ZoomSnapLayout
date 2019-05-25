@@ -11,13 +11,14 @@ import UIKit
 public class ZoomAndSnapFlowLayout: UICollectionViewFlowLayout {
     
     let activeDistance: CGFloat = 120
-    let zoomFactor: CGFloat = 0.3
+    let zoomFactor: CGFloat = 0.17
     
     override init() {
         super.init()
         
         scrollDirection = .horizontal
         minimumLineSpacing = 30
+        minimumInteritemSpacing = 40
         itemSize = CGSize(width: 75, height: 150)
     }
     

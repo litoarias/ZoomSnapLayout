@@ -67,7 +67,7 @@ class CollectionDataSource: NSObject, UICollectionViewDataSource, UICollectionVi
             }
             if loadingStatus != .finished {
                 let activityView = UIActivityIndicatorView(style: .gray)
-                activityView.center = CGPoint(x:cell.contentView.frame.size.width * 2, y: cell.contentView.frame.size.height / 2)
+                activityView.center = CGPoint(x:cell.contentView.frame.size.width * 1.2, y: cell.contentView.frame.size.height / 2)
                 cell.contentView.addSubview(activityView)
                 activityView.startAnimating()
             }

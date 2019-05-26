@@ -10,8 +10,8 @@ import UIKit
 
 public class ZoomAndSnapFlowLayout: UICollectionViewFlowLayout {
     
-    let activeDistance: CGFloat = 120
-    let zoomFactor: CGFloat = 0.17
+    private var activeDistance: CGFloat = 120
+    private var zoomFactor: CGFloat = 0.17
     
     override init() {
         super.init()
@@ -31,6 +31,14 @@ public class ZoomAndSnapFlowLayout: UICollectionViewFlowLayout {
         self.init()
         self.itemSize = itemSize
         self.minimumLineSpacing = minimumLineSpacing
+    }
+    
+    convenience public init(itemSize: CGSize, minimumLineSpacing: CGFloat, activeDistance: CGFloat, zoomFactor: CGFloat) {
+        self.init()
+        self.itemSize = itemSize
+        self.minimumLineSpacing = minimumLineSpacing
+        self.activeDistance = activeDistance
+        self.zoomFactor = zoomFactor
     }
     
     required init?(coder aDecoder: NSCoder) {
